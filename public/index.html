@@ -105,10 +105,7 @@
             <!-- form for adding todo list -->
             <form action="">
               <div class="bg-white p-2 pl-3 w-full rounded-md flex items-center mb-4">
-                <div>
-                  <input type="radio" name="radio" id="radio" class="hidden" />
-                  <label for="radio" class="custom-radio"></label>
-                </div>
+                <!-- enter input to create a new todo -->
                 <div class="">
                   <input
                     type="text"
@@ -123,8 +120,8 @@
             <!-- Todo's -->
             <div class="rounded-md bg-white shadow-lg">
               <ul class="">
-                <li class="px-3 py-2">
-                  <div class="flex justify-between items-center">
+                <li class="cursor-pointer">
+                  <div class="flex justify-between items-center px-3 py-2">
                     <div class="flex items-center gap-2">
                       <div class="mt-2">
                         <input
@@ -139,12 +136,12 @@
                         Complete online JavaScript course
                       </p>
                     </div>
-                    <img src="./images/icon-cross.svg" alt="" class="w-3" />
+                    <img src="./images/icon-cross.svg" alt="" class="w-3 cursor-pointer" name="delete" />
                   </div>
-                </li>
                 <hr />
-                <li class="px-3 py-2">
-                  <div class="flex justify-between items-center">
+                </li>
+                <li class="cursor-pointer">
+                  <div class="flex justify-between items-center px-3 py-2">
                     <div class="flex items-center gap-2">
                       <div class="mt-2">
                         <input
@@ -159,12 +156,12 @@
                         Jog around the park 3x
                       </p>
                     </div>
-                    <img src="./images/icon-cross.svg" alt="" class="w-3" />
+                    <img src="./images/icon-cross.svg" alt="" class="w-3 cursor-pointer" name="delete"/>
                   </div>
-                </li>
                 <hr />
-                <li class="px-3 py-2">
-                  <div class="flex justify-between items-center">
+                </li>
+                <li class="cursor-pointer">
+                  <div class="flex justify-between items-center px-3 py-2">
                     <div class="flex items-center gap-2">
                       <div class="mt-2">
                         <input
@@ -179,12 +176,12 @@
                         10 minutes meditation
                       </p>
                     </div>
-                    <img src="./images/icon-cross.svg" alt="" class="w-3" />
+                    <img src="./images/icon-cross.svg" alt="" class="w-3 cursor-pointer" name="delete"/>
                   </div>
-                </li>
                 <hr />
-                <li class="px-3 py-2">
-                  <div class="flex justify-between items-center">
+                </li>
+                <li class="cursor-pointer">
+                  <div class="flex justify-between items-center px-3 py-2">
                     <div class="flex items-center gap-2">
                       <div class="mt-2">
                         <input
@@ -199,12 +196,12 @@
                         Read for 1 hour
                       </p>
                     </div>
-                    <img src="./images/icon-cross.svg" alt="" class="w-3" />
+                    <img src="./images/icon-cross.svg" alt="" class="w-3 cursor-pointer" name="delete"/>
                   </div>
-                </li>
                 <hr />
-                <li class="px-3 py-2">
-                  <div class="flex justify-between items-center">
+                </li>
+                <li class="cursor-pointer">
+                  <div class="flex justify-between items-center px-3 py-2">
                     <div class="flex items-center gap-2">
                       <div class="mt-2">
                         <input
@@ -219,12 +216,12 @@
                         Pick up grocery
                       </p>
                     </div>
-                    <img src="./images/icon-cross.svg" alt="" class="w-3" />
+                    <img src="./images/icon-cross.svg" alt="" class="w-3 cursor-pointer" name="delete"/>
                   </div>
+                  <hr>
                 </li>
-                <hr />
-                <li class="px-3 py-2">
-                  <div class="flex justify-between items-center">
+                <li class="cursor-pointer">
+                  <div class="flex justify-between items-center px-3 py-2">
                     <div class="flex items-center gap-2">
                       <div class="mt-2">
                         <input
@@ -239,22 +236,29 @@
                         Complete Todo App on Frontend Mentor
                       </p>
                     </div>
-                    <img src="./images/icon-cross.svg" alt="" class="w-3" />
+                    <img src="./images/icon-cross.svg" alt="" class="w-3 cursor-pointer" name="delete"/>
                   </div>
+                  <hr />
                 </li>
-                <hr />
               </ul>
-              <div class="bg-white flex justify-between p-3">
+              <div class="bg-white flex justify-between p-3 text-sm">
                 <p class="text-darkGB">5 items left</p>
-                <p class="text-darkGB">Clear completed</p>
+                <div class="flex items-center justify-center hidden md:flex">
+                  <div class=" flex gap-4 text-center">
+                    <p class="text-darkGB cursor-pointer">All</p>
+                    <p class="text-darkGB cursor-pointer">Active</p>
+                    <p class="text-darkGB cursor-pointer">Completed</p>
+                  </div>
+                </div>
+                <p class="text-darkGB cursor-pointer">Clear completed</p>
               </div>
             </div>
             <!-- below the ul section-->
-            <div class="flex items-center justify-center bg-white mt-4 shadow-lg rounded-md">
+            <div class="flex items-center justify-center bg-white mt-4 shadow-lg rounded-md md:hidden">
               <div class=" flex gap-4 p-4 text-center">
-                <p class="text-darkGB">All</p>
-                <p class="text-darkGB">Active</p>
-                <p class="text-darkGB">Completed</p>
+                <p class="text-darkGB cursor-pointer">All</p>
+                <p class="text-darkGB cursor-pointer">Active</p>
+                <p class="text-darkGB cursor-pointer">Completed</p>
               </div>
             </div>
 
@@ -266,5 +270,8 @@
         </div>
       </div>
     </main>
+
+    <!-- script -->
+    <script src="./index.js"></script>
   </body>
 </html>

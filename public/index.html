@@ -119,7 +119,7 @@
             </form>
             <!-- Todo's -->
             <div class="rounded-md bg-white shadow-lg">
-              <ul class="">
+              <ul class="cursor-pointer">
                 <li class="cursor-pointer">
                   <div class="flex justify-between items-center px-3 py-2">
                     <div class="flex items-center gap-2">
@@ -180,7 +180,7 @@
                   </div>
                 <hr />
                 </li>
-                <li class="cursor-pointer">
+                <li class="cursor-pointer" draggable="true">
                   <div class="flex justify-between items-center px-3 py-2">
                     <div class="flex items-center gap-2">
                       <div class="mt-2">
@@ -242,7 +242,7 @@
                 </li>
               </ul>
               <div class="bg-white flex justify-between p-3 text-sm">
-                <p class="text-darkGB">5 items left</p>
+                <p class="text-darkGB"><span id="no-of-items">6</span> items left</p>
                 <div class="flex items-center justify-center hidden md:flex">
                   <div class=" flex gap-4 text-center">
                     <p class="text-darkGB cursor-pointer">All</p>
@@ -250,7 +250,7 @@
                     <p class="text-darkGB cursor-pointer">Completed</p>
                   </div>
                 </div>
-                <p class="text-darkGB cursor-pointer">Clear completed</p>
+                <p class="text-darkGB cursor-pointer" id="clear">Clear completed</p>
               </div>
             </div>
             <!-- below the ul section-->

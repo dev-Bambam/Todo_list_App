@@ -6,6 +6,7 @@ deleteBtns.forEach(btn => {
         todo.remove()
     })
 });
+
 // marking completed todo
 const radios = document.querySelectorAll('input[type = "radio"]');
 radios.forEach(radio =>{
@@ -15,4 +16,13 @@ radios.forEach(radio =>{
     })
 });
 
-// 
+// creating new todos
+const formInput = document.forms[0];
+formInput.addEventListener('submit', (e)=>{
+    e.preventDefault()
+    const value = formInput.querySelector('input[type="text"]').value;
+
+    // creating todo elements
+    const todo_li = document.createElement('li');
+
+})

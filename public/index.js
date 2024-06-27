@@ -1,21 +1,24 @@
 const ul = document.querySelector('ul');
 const no_of_items = document.querySelector('#no-of-items');
-let counter = parseInt(no_of_items.innerHTML)
+let counter = 0
 
 ul.addEventListener('click', (e) => {
     //  delete todo
     if (e.target.name == 'delete') {
         let todo = e.target.parentNode.parentNode;
         todo.remove();
-        counter --;
-        no_of_items.innerHTML = counter;
     }
 
     // marking todo as complete
     if (e.target.type == 'radio') {
         let todo_title = e.target.parentNode.nextElementSibling;
         todo_title.classList.add('line-through');
-    }
+
+        // decrease number of items
+        counter = parseInt(no_of_items.innerHTML)
+        counter--;
+        no_of_items.innerHTML = counter;
+    };
 })
 
 // creating new todos
@@ -69,13 +72,23 @@ formInput.addEventListener('submit', (e) => {
         ul.appendChild(todo_li)
 
         // increasing the no of items
-        counter ++;
+        counter = parseInt(no_of_items.innerHTML)
+        counter++;
         no_of_items.innerHTML = counter;
     };
 });
 
 // clear complete
 const clear = document.querySelector('#clear');
-clear.addEventListener('click', (e)=>{
-    const elements = document.querySelectorAll('p')
-})
+clear.addEventListener('click', (e) => {
+    const elements = document.querySelectorAll('p');
+    let count = 0
+    elements.forEach(elem => {
+        if (elem.classList.contains('line-through')) {
+            let list = elem.parentNode.parentNode.parentNode;
+            let current = parseInt(no_of_items.innerHTML);
+            no_of_items.innerHTML = --current 
+            list.style.display = 'none';
+        }
+    });
+});

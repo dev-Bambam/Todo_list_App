@@ -92,3 +92,28 @@ clear.addEventListener('click', (e) => {
         }
     });
 });
+
+// click event on the All, Active and Completed element
+const todo_wrapper = document.querySelector('#todo-wrapper');
+todo_wrapper.addEventListener('click', (e)=>{
+   
+    // Completed
+    if (e.target.textContent == 'Completed'){
+        list = document.querySelectorAll('li p');
+        list.forEach(elem => {
+            if (!elem.classList.contains('line-through')) {
+                elem.parentNode.parentNode.parentNode.style.display = 'none';
+            }
+        });
+    };
+    
+    // All
+    if (e.target.textContent == 'All'){
+        list = document.querySelectorAll('li p');
+        list.forEach(elem => {
+            elem.parentNode.parentNode.parentNode.style.display = 'block';
+        });
+    }
+});
+
+// dark and light theme

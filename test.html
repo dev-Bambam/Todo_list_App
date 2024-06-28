@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drag and Drop To-Do List</title>
+
+    <style>
+      /* styles.css */
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .todo-list {
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .todo-item {
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        background-color: #f9f9f9;
+        cursor: grab;
+      }
+
+      .todo-item.dragging {
+        opacity: 0.5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="todo-list">
+      <div class="todo-item" draggable="true">Task 1</div>
+      <div class="todo-item" draggable="true">Task 2</div>
+      <div class="todo-item" draggable="true">Task 3</div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const items = document.querySelectorAll(".todo-item");
+
+        items.forEach((item) => {
+          item.addEventListener("dragstart", handleDragStart);
+          item.addEventListener("drag", handleDrag);
+          item.addEventListener("dragend", handleDragEnd);
+          item.addEventListener("dragenter", handleDragEnter);
+          item.addEventListener("dragover", handleDragOver);
+          item.addEventListener("dragleave", handleDragLeave);
+          item.addEventListener("drop", handleDrop);
+        });
+
+        function handleDragStart(e) {
+          e.dataTransfer.setData("text/plain", e.target.innerText);
+          e.target.classList.add("dragging");
+          console.log("Drag Start");
+        }
+
+        function handleDrag(e) {
+          console.log("Dragging");
+        }
+
+        function handleDragEnd(e) {
+          e.target.classList.remove("dragging");
+          console.log("Drag End");
+        }
+
+        function handleDragEnter(e) {
+          e.preventDefault();
+          e.target.closest(".todo-item").classList.add("over");
+          console.log("Drag Enter");
+        }
+
+        function handleDragOver(e) {
+          e.preventDefault();
+          console.log("Drag Over");
+        }
+
+        function handleDragLeave(e) {
+          e.target.closest(".todo-item").classList.remove("over");
+          console.log("Drag Leave");
+        }
+
+        function handleDrop(e) {
+          e.preventDefault();
+          const draggingItem = document.querySelector(".dragging");
+          const targetItem = e.target.closest(".todo-item");
+
+          if (targetItem && draggingItem !== targetItem) {
+            const rect = targetItem.getBoundingClientRect();
+            const next =
+              (e.clientY - rect.top) / (rect.bottom - rect.top) > 0.5;
+            targetItem.parentNode.insertBefore(
+              draggingItem,
+              next ? targetItem.nextSibling : targetItem
+            );
+          }
+          console.log("Drop");
+        }
+      });
+    </script>
+  </body>
+</html>

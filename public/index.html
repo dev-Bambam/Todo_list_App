@@ -29,14 +29,10 @@
         font-family: Josefin Sans;
         font-size: 18px;
       }
-      header {
-        background-image: url(./images/bg-mobile-light.jpg);
+      .header {
         background-size: cover;
-      }
-      @media (min-width: 768px) {
-        header {
-          background-image: url(./images/bg-desktop-light.jpg);
-        }
+        height: 13rem;
+        width: 100%;
       }
       .custom-radio {
         display: inline-block;
@@ -87,188 +83,230 @@
       }
     </style>
   </head>
-  <body class="bg-veryLG">
-    <main>
-      <header class="h-48 w-full"></header>
-      <div class="-mt-40 md:max-w-xl md:mx-auto">
-        <!-- todo container  -->
-        <div class="px-5">
-          <!-- todo wrapper -->
-          <div id="todo-wrapper">
-            <!-- todo heading -->
-            <div class="flex justify-between items-center mb-6">
-              <h1 class="text-white text-3xl font-semibold tracking-[10px]">
-                TODO
-              </h1>
-              <img src="./images/icon-moon.svg" alt="" />
-            </div>
-            <!-- form for adding todo list -->
-            <form action="" id="form" name="form">
-              <div class="bg-white p-2 pl-3 w-full rounded-md flex items-center mb-4">
-                <!-- enter input to create a new todo -->
-                <div class="">
-                  <input
-                    type="text"
-                    name="todo-title"
-                    placeholder="Create a new todo.."
-                    id="create-todo"
-                    class="flex-1 p-2 active:outline-none active:border-none focus:outline-none focus:border-none text-xl text-darkGB bg-none"
-                  />
-                </div>
+  <body class="bg-veryL+">
+    <div class="" id="dark">
+      <main class="bg-veryLG h-[100vh] dark:bg-veryDarkB">
+        <header class="header bg-bgMobile md:bg-bgDesktop dark:bg-bgMobileDark md:dark:bg-bgDesktopDark"></header>
+        <div class="-mt-40 md:max-w-xl md:mx-auto">
+          <!-- todo container  -->
+          <div class="px-5">
+            <!-- todo wrapper -->
+            <div id="todo-wrapper">
+              <!-- todo heading -->
+              <div class="flex justify-between items-center mb-6">
+                <h1
+                  class="text-white text-3xl font-semibold tracking-[10px]"
+                >
+                  TODO
+                </h1>
+                <img src="./images/icon-moon.svg" alt="" id="theme" />
               </div>
-            </form>
-            <!-- Todo's -->
-            <div class="rounded-md bg-white shadow-lg">
-              <ul class="cursor-pointer" draggable="true">
-                <li class="cursor-pointer">
-                  <div class="flex justify-between items-center px-3 py-2">
-                    <div class="flex items-center gap-2">
-                      <div class="mt-2">
-                        <input
-                          type="radio"
-                          name="radio1"
-                          id="radio1"
-                          class="hidden"
-                        />
-                        <label for="radio1" class="custom-radio"></label>
-                      </div>
-                      <p class="text-veryDarkGB text-[1rem]">
-                        Complete online JavaScript course
-                      </p>
-                    </div>
-                    <img src="./images/icon-cross.svg" alt="" class="w-3 cursor-pointer" name="delete" />
-                  </div>
-                  <hr />
-                </li>
-                <li class="cursor-pointer" draggable="true">
-                  <div class="flex justify-between items-center px-3 py-2">
-                    <div class="flex items-center gap-2">
-                      <div class="mt-2">
-                        <input
-                          type="radio"
-                          name="radio2"
-                          id="radio2"
-                          class="hidden"
-                        />
-                        <label for="radio2" class="custom-radio"></label>
-                      </div>
-                      <p class="text-veryDarkGB text-[1rem]">
-                        Jog around the park 3x
-                      </p>
-                    </div>
-                    <img src="./images/icon-cross.svg" alt="" class="w-3 cursor-pointer" name="delete"/>
-                  </div>
-                <hr />
-                </li>
-                <li class="cursor-pointer" draggable="true">
-                  <div class="flex justify-between items-center px-3 py-2">
-                    <div class="flex items-center gap-2">
-                      <div class="mt-2">
-                        <input
-                          type="radio"
-                          name="radio3"
-                          id="radio3"
-                          class="hidden"
-                        />
-                        <label for="radio3" class="custom-radio"></label>
-                      </div>
-                      <p class="text-veryDarkGB text-[1rem]">
-                        10 minutes meditation
-                      </p>
-                    </div>
-                    <img src="./images/icon-cross.svg" alt="" class="w-3 cursor-pointer" name="delete"/>
-                  </div>
-                <hr />
-                </li>
-                <li class="cursor-pointer" draggable="true" draggable="true">
-                  <div class="flex justify-between items-center px-3 py-2">
-                    <div class="flex items-center gap-2">
-                      <div class="mt-2">
-                        <input
-                          type="radio"
-                          name="radio4"
-                          id="radio4"
-                          class="hidden"
-                        />
-                        <label for="radio4" class="custom-radio"></label>
-                      </div>
-                      <p class="text-veryDarkGB text-[1rem]">
-                        Read for 1 hour
-                      </p>
-                    </div>
-                    <img src="./images/icon-cross.svg" alt="" class="w-3 cursor-pointer" name="delete"/>
-                  </div>
-                <hr />
-                </li>
-                <li class="cursor-pointer" draggable="true">
-                  <div class="flex justify-between items-center px-3 py-2">
-                    <div class="flex items-center gap-2">
-                      <div class="mt-2">
-                        <input
-                          type="radio"
-                          name="radio5"
-                          id="radio5"
-                          class="hidden"
-                        />
-                        <label for="radio5" class="custom-radio"></label>
-                      </div>
-                      <p class="text-veryDarkGB text-[1rem]">
-                        Pick up grocery
-                      </p>
-                    </div>
-                    <img src="./images/icon-cross.svg" alt="" class="w-3 cursor-pointer" name="delete"/>
-                  </div>
-                  <hr>
-                </li>
-                <li class="cursor-pointer" draggable="true">
-                  <div class="flex justify-between items-center px-3 py-2">
-                    <div class="flex items-center gap-2">
-                      <div class="mt-2">
-                        <input
-                          type="radio"
-                          name="radio6"
-                          id="radio6"
-                          class="hidden"
-                        />
-                        <label for="radio6" class="custom-radio"></label>
-                      </div>
-                      <p class="text-veryDarkGB text-[1rem]">
-                        Complete Todo App on Frontend Mentor
-                      </p>
-                    </div>
-                    <img src="./images/icon-cross.svg" alt="" class="w-3 cursor-pointer" name="delete"/>
-                  </div>
-                  <hr />
-                </li>
-              </ul>
-              <div class="bg-white flex justify-between p-3 text-sm">
-                <p class="text-darkGB"><span id="no-of-items">6</span> items left</p>
-                <div class="flex items-center justify-center hidden md:flex">
-                  <div class=" flex gap-4 text-center">
-                    <p class="text-darkGB cursor-pointer">All</p>
-                    <p class="text-darkGB cursor-pointer">Active</p>
-                    <p class="text-darkGB cursor-pointer">Completed</p>
+              <!-- form for adding todo list -->
+              <form action="" id="form" name="form">
+                <div
+                  class="bg-white dark:bg-veryDarkDesaturatedB p-2 pl-3 w-full rounded-md flex items-center mb-4"
+                >
+                  <!-- enter input to create a new todo -->
+                  <div class="">
+                    <input
+                      type="text"
+                      name="todo-title"
+                      placeholder="Create a new todo.."
+                      id="create-todo"
+                      class="flex-1 p-2 active:outline-none active:border-none focus:outline-none focus:border-none text-xl text-darkGB bg-none dark:bg-veryDarkDesaturatedB"
+                    />
                   </div>
                 </div>
-                <p class="text-darkGB cursor-pointer" id="clear">Clear completed</p>
+              </form>
+              <!-- Todo's -->
+              <div class="rounded-md bg-white dark:bg-veryDarkDesaturatedB shadow-lg">
+                <ul class="cursor-pointer" draggable="true">
+                  <li class="" draggable="true">
+                    <div class="flex justify-between items-center px-3 py-2">
+                      <div class="flex items-center gap-2">
+                        <div class="mt-2">
+                          <input
+                            type="radio"
+                            name="radio1"
+                            id="radio1"
+                            class="hidden"
+                          />
+                          <label for="radio1" class="custom-radio"></label>
+                        </div>
+                        <p class="text-veryDarkGB text-[1rem]">
+                          Complete online JavaScript course
+                        </p>
+                      </div>
+                      <img
+                        src="./images/icon-cross.svg"
+                        alt=""
+                        class="w-3 cursor-pointer"
+                        name="delete"
+                      />
+                    </div>
+                    <div class="dark:bg-veryDarkGB bg-veryLGB h-[0.5px] w-full "></div>
+                  </li>
+                  <li class="list" draggable="true">
+                    <div class="flex justify-between items-center px-3 py-2">
+                      <div class="flex items-center gap-2">
+                        <div class="mt-2">
+                          <input
+                            type="radio"
+                            name="radio2"
+                            id="radio2"
+                            class="hidden"
+                          />
+                          <label for="radio2" class="custom-radio"></label>
+                        </div>
+                        <p class="text-veryDarkGB text-[1rem]">
+                          Jog around the park 3x
+                        </p>
+                      </div>
+                      <img
+                        src="./images/icon-cross.svg"
+                        alt=""
+                        class="w-3 cursor-pointer"
+                        name="delete"
+                      />
+                    </div>
+                    <div class="dark:bg-veryDarkGB bg-veryLGB h-[0.5px] w-full "></div>
+                  </li>
+                  <li class="list" draggable="true">
+                    <div class="flex justify-between items-center px-3 py-2">
+                      <div class="flex items-center gap-2">
+                        <div class="mt-2">
+                          <input
+                            type="radio"
+                            name="radio3"
+                            id="radio3"
+                            class="hidden"
+                          />
+                          <label for="radio3" class="custom-radio"></label>
+                        </div>
+                        <p class="text-veryDarkGB text-[1rem]">
+                          10 minutes meditation
+                        </p>
+                      </div>
+                      <img
+                        src="./images/icon-cross.svg"
+                        alt=""
+                        class="w-3 cursor-pointer"
+                        name="delete"
+                      />
+                    </div>
+                    <div class="dark:bg-veryDarkGB bg-veryLGB h-[0.5px] w-full "></div>
+                  </li>
+                  <li class="list" draggable="true">
+                    <div class="flex justify-between items-center px-3 py-2">
+                      <div class="flex items-center gap-2">
+                        <div class="mt-2">
+                          <input
+                            type="radio"
+                            name="radio4"
+                            id="radio4"
+                            class="hidden"
+                          />
+                          <label for="radio4" class="custom-radio"></label>
+                        </div>
+                        <p class="text-veryDarkGB text-[1rem]">
+                          Read for 1 hour
+                        </p>
+                      </div>
+                      <img
+                        src="./images/icon-cross.svg"
+                        alt=""
+                        class="w-3 cursor-pointer"
+                        name="delete"
+                      />
+                    </div>
+                    <div class="dark:bg-veryDarkGB bg-veryLGB h-[0.5px] w-full "></div>
+                  </li>
+                  <li class="list" draggable="true">
+                    <div class="flex justify-between items-center px-3 py-2">
+                      <div class="flex items-center gap-2">
+                        <div class="mt-2">
+                          <input
+                            type="radio"
+                            name="radio5"
+                            id="radio5"
+                            class="hidden"
+                          />
+                          <label for="radio5" class="custom-radio"></label>
+                        </div>
+                        <p class="text-veryDarkGB text-[1rem]">
+                          Pick up grocery
+                        </p>
+                      </div>
+                      <img
+                        src="./images/icon-cross.svg"
+                        alt=""
+                        class="w-3 cursor-pointer"
+                        name="delete"
+                      />
+                    </div>
+                    <div class="dark:bg-veryDarkGB bg-veryLGB h-[0.5px] w-full "></div>
+                  </li>
+                  <li class="list" draggable="true">
+                    <div class="flex justify-between items-center px-3 py-2">
+                      <div class="flex items-center gap-2">
+                        <div class="mt-2">
+                          <input
+                            type="radio"
+                            name="radio6"
+                            id="radio6"
+                            class="hidden"
+                          />
+                          <label for="radio6" class="custom-radio"></label>
+                        </div>
+                        <p class="text-veryDarkGB text-[1rem]">
+                          Complete Todo App on Frontend Mentor
+                        </p>
+                      </div>
+                      <img
+                        src="./images/icon-cross.svg"
+                        alt=""
+                        class="w-3 cursor-pointer"
+                        name="delete"
+                      />
+                    </div>
+                    <div class="dark:bg-veryDarkGB bg-veryLGB h-[0.5px] w-full "></div>
+                  </li>
+                </ul>
+                <div class="bg-white dark:bg-veryDarkDesaturatedB flex justify-between p-3 text-sm">
+                  <p class="text-darkGB">
+                    <span id="no-of-items">6</span> items left
+                  </p>
+                  <div class="flex items-center justify-center hidden md:flex">
+                    <div class="flex gap-4 text-center">
+                      <p class="text-darkGB cursor-pointer">All</p>
+                      <p class="text-darkGB cursor-pointer">Active</p>
+                      <p class="text-darkGB cursor-pointer">Completed</p>
+                    </div>
+                  </div>
+                  <p class="text-darkGB cursor-pointer" id="clear">
+                    Clear completed
+                  </p>
+                </div>
               </div>
-            </div>
-            <!-- below the ul section-->
-            <div class="flex items-center justify-center bg-white mt-4 shadow-lg rounded-md md:hidden">
-              <div class=" flex gap-4 p-4 text-center">
-                <p class="text-darkGB cursor-pointer">All</p>
-                <p class="text-darkGB cursor-pointer">Active</p>
-                <p class="text-darkGB cursor-pointer">Completed</p>
+              <!-- below the ul section-->
+              <div
+                class="flex items-center justify-center bg-white dark:bg-veryDarkDesaturatedB mt-4 shadow-lg rounded-md md:hidden"
+              >
+                <div class="flex gap-4 p-4 text-center">
+                  <p class="text-darkGB cursor-pointer">All</p>
+                  <p class="text-darkGB cursor-pointer">Active</p>
+                  <p class="text-darkGB cursor-pointer">Completed</p>
+                </div>
               </div>
-            </div>
-            <!-- drag and drop notification text -->
-            <div class="mt-5 text-center">
-              <p class="text-darkGB_dark">Drag and drop to reoder list</p>
+              <!-- drag and drop notification text -->
+              <div class="mt-5 text-center ">
+                <p class="text-darkGB_dark">Drag and drop to re-order list</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </div>
 
     <!-- script -->
     <script src="./index.js"></script>

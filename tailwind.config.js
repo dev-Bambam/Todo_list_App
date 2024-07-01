@@ -2,6 +2,12 @@
 module.exports = {
   content: ["public/**/*.html"],
   theme: {
+    backgroundImage:{
+      bgDesktop: 'url(./images/bg-desktop-light.jpg)',
+      bgDesktopDark: 'url(./images/bg-desktop-dark.jpg)',
+      bgMobileDark: 'url(./images/bg-mobile-dark.jpg)',
+      bgMobile: 'url(./images/bg-mobile-light.jpg)',
+    },
     extend: {
       colors:{
         // primary 
@@ -30,5 +36,6 @@ module.exports = {
     },
   },
   plugins: [],
+  darkMode: 'class',
 }
 
